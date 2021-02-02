@@ -15,9 +15,14 @@ axios.get(url).then(response=> {
     const id = albums.id;
     const title = albums.title;
 
-    console.log(`
-        The userId: ${userId}
-        id is: ${id}
-        Has a title of: ${title}
-    `);
+    logAlbums(userId, id, title);
 });
+
+
+const logAlbums = (userId: number, id: number, title: string) => {
+    console.log(`
+    The userId: ${userId}
+    id is: ${id}
+    Has a title of: ${title}
+`);
+};
