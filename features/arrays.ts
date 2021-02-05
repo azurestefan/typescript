@@ -15,7 +15,7 @@ const carByMake: string[][] = [];
 //annotation used when there is an empty array
 
 //Help with inference when extracting values
-const car = carMakers[0];
+const cars = carMakers[0];
 const myCar = carMakers.pop();
 
 //Prevent incompatible values
