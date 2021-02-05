@@ -29,8 +29,8 @@ class Vehicle {
   
   //basic inheritance. Child class Car.
   class Car extends Vehicle {
-    constructor(public wheels: number, color: string) {
-      super(color);
+    constructor(public wheels: number, color: string) { //second argument color added in the function to pass new color. public modifier not used as we do not want to reassign or create a new field in car as color belongs to Vehicle.
+      super(color); //reference to the construtor method in the parent. 
     }
     
     //private modifier. Only called by the method in this class.
@@ -47,5 +47,8 @@ class Vehicle {
   }
   
   //instance of a car
-  const car = new Car(4, 'red');
+  const car = new Car(4, 'red'); // wheels(child class), color will pass on through constructor of child car class to the parent constructor of vehicle.
   car.startDrivingProcess();
+
+  //Where to use classes
+  //In the following projects, classes will be made(one class each for each file) and these different classes will work together by using interfaces.
