@@ -26,3 +26,4 @@ const logAlbums = (userId: number, id: number, title: string) => {
     Has a title of: ${title}
 `);
 };
+
