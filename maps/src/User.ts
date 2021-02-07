@@ -17,6 +17,7 @@ export class User implements Mappable {
     };
   }
 
+  // popup content
   markerContent(): string {
     return `User Name: ${this.name}`;
   }

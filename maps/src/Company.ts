@@ -19,6 +19,7 @@ export class Company implements Mappable {
     };
   }
 
+  //popup content. Must satisfy markercontent string.
   markerContent(): string {
     return `
       <div>
