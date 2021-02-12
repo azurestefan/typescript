@@ -1,14 +1,16 @@
 import { MatchReader } from './MatchReader'; //file system in node.
-import {CsvFileReader} from './CsvFileReader';
-import { MatchResult } from './MatchResult';
+import {Summary} from './Summary';
 
 // Create an object that satisfies the 'DataReader' interface
-const csvFileReader = new CsvFileReader('football.csv');
+//const csvFileReader = new CsvFileReader('football.csv');
 
 // Create an instance of MatchReader and pass in something satisfying the 'DataReader' interface
-const matchReader = new MatchReader(csvFileReader);
+const matchReader = MatchReader.fromCsv('football.csv');
+const summary = Summary.winsAnalysisWithHtmlReport('Man United');
+
 matchReader.load();
-//matchReader.matches
+summary.buildAndPrintReport(matchReader.matches);
+
 
 
 // **For Generic refactor**
@@ -37,14 +39,14 @@ matchReader.load();
 // enum is used over objects because it signals to engineers that these are a set of closely related values
 
 
-let manUnitedWins = 0;
+// let manUnitedWins = 0;
 
-for (let match of matchReader.matches) {
-    if(match[1] === 'Man United' && match[5] ===MatchResult.HomeWin){
-        manUnitedWins++;
-    } else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin){
-        manUnitedWins++;
-    }
-}
+// for (let match of matchReader.matches) {
+//     if(match[1] === 'Man United' && match[5] ===MatchResult.HomeWin){
+//         manUnitedWins++;
+//     } else if (match[2] === 'Man United' && match[5] === MatchResult.AwayWin){
+//         manUnitedWins++;
+//     }
+// }
 
-console.log(`Man United won ${manUnitedWins} games` )
+//console.log(`Man United won ${manUnitedWins} games` )

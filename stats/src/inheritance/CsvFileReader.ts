@@ -1,25 +1,28 @@
-import fs from 'fs';
+//inheritance! abstract class CsvFileReader with read(): void, mapRow(string[]):MatchData
+// inherited by child classes like Matchreader, MovieReader etc
 
-//added generic class with <AnyTypeWeWant> or <T> that is like an argument in a function.
-export abstract class CsvFileReader<T> {
-    data: T[] = [];
+// import fs from 'fs';
 
-    constructor(public filename: string) {}
+// //added generic class with <AnyTypeWeWant> or <T> that is like an argument in a function.
+// export abstract class CsvFileReader<T> {
+//     data: T[] = [];
 
-    abstract mapRow(row: string[]): T;
+//     constructor(public filename: string) {}
 
-    read(): void {
-        this.data = fs
-        .readFileSync(this.filename, {
-            encoding: 'utf-8'
-        })
-        .split('\n')
-        .map(
-            (row:string): string[] => {
-             return row.split(',');
-            }
-        )
-        .map(this.mapRow);
-    }
+//     abstract mapRow(row: string[]): T;
 
-}
+//     read(): void {
+//         this.data = fs
+//         .readFileSync(this.filename, {
+//             encoding: 'utf-8'
+//         })
+//         .split('\n')
+//         .map(
+//             (row:string): string[] => {
+//              return row.split(',');
+//             }
+//         )
+//         .map(this.mapRow);
+//     }
+
+// }
