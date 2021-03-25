@@ -1,5 +1,6 @@
 import { Sorter } from './Sorter';
 
+//wraps up a string we need to sort. Need to define a swap method, a compare method, and a length property.
 export class CharactersCollection extends Sorter {
   constructor(public data: string) {
     super();
